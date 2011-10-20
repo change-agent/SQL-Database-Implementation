@@ -1,0 +1,10 @@
+insert into city.route values ((select iata_code from city.airline where airline_name = 'American Airlines'), city.route_number_seq.nextval, 100, 97);
+insert into city.route values ((select iata_code from city.airline where airline_name = 'American Airlines'), city.route_number_seq.nextval, 97, 100);
+insert into city.route values ((select iata_code from city.airline where airline_name = 'American Airlines'), city.route_number_seq.nextval, 97, 99);
+insert into city.flight values ('AA',(select route_number from city.route where from_city_code = '97' and to_city_code = '100'),to_date('9-OCT-11 2:00PM','DD-MON-RR HH:MIPM'),to_date('9-OCT-11 10:32PM','DD-MON-RR HH:MIPM'),to_date('9-OCT-11 2:04 PM','DD-MON-RR HH:MI PM'),to_date('9-OCT-11 10:35 PM','DD-MON-RR HH:MI PM'));
+insert into city.flight values ('AA',(select route_number from city.route where from_city_code = '100' and to_city_code = '97'),to_date('10-OCT-11 3:00PM','DD-MON-RR HH:MIPM'),to_date('10-OCT-11 11:32PM','DD-MON-RR HH:MIPM'),to_date('10-OCT-11 3:10 PM','DD-MON-RR HH:MI PM'),to_date('10-OCT-11 11:40 PM','DD-MON-RR HH:MI PM'));
+insert into city.flight values ('AA',(select route_number from city.route where from_city_code = '97' and to_city_code = '100'),to_date('11-OCT-11 2:00PM','DD-MON-RR HH:MIPM'),to_date('11-OCT-11 10:32PM','DD-MON-RR HH:MIPM'),to_date('11-OCT-11 2:04 PM','DD-MON-RR HH:MI PM'),to_date('11-OCT-11 10:35 PM','DD-MON-RR HH:MI PM'));
+insert into city.flight values ('AA',(select route_number from city.route where from_city_code = '100' and to_city_code = '97'),to_date('5-NOV-11 2:00PM','DD-MON-RR HH:MIPM'),to_date('5-NOV-11 10:32PM','DD-MON-RR HH:MIPM'),null,null);
+insert into city.flight values ('AA',(select route_number from city.route where from_city_code = '100' and to_city_code = '97'),to_date('6-NOV-11 3:00PM','DD-MON-RR HH:MIPM'),to_date('6-NOV-11 11:32PM','DD-MON-RR HH:MIPM'),null,null);
+insert into city.flight values ('AA',(select route_number from city.route where from_city_code = '100' and to_city_code = '97'),to_date('7-NOV-11 3:00PM','DD-MON-RR HH:MIPM'),to_date('7-NOV-11 11:32PM','DD-MON-RR HH:MIPM'),null,null);
+commit;
